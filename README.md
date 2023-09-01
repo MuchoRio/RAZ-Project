@@ -1,4 +1,4 @@
-![image](https://raw.githubusercontent.com/Pucukio/RAZ-Project/img/Banner-Final-Project-Stage-One.png)
+![image](img/Banner-Final-Project-Stage-One.png)
 
 # RAZPanel - Social Media Marketing
 
