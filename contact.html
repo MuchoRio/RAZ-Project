@@ -1,107 +1,230 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Icon -->
+    
+    <title>Hubungi Kami - RAZ Panel</title>
+    <meta name="description" content="Hubungi RAZ Panel untuk pertanyaan, dukungan, atau kerja sama. Kami siap membantu Anda melalui email, telepon, atau formulir kontak." />
+
     <link rel="shortcut icon" href="img/icon_v2.png" type="image/x-icon" />
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="css/fontawesome.min.css" />
-    <!-- Style -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>RAZ Panel - Contact</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <style>
+      :root {
+        --bs-primary-rgb: 88, 101, 242;
+        --bs-secondary-rgb: 155, 155, 155;
+        --bs-body-font-family: 'Poppins', sans-serif;
+        --bs-body-bg: #f8f9fa;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+      }
+      .page-header {
+        padding: 80px 0;
+        background-color: #ffffff;
+      }
+      .btn-primary {
+        background-color: rgb(var(--bs-primary-rgb));
+        border-color: rgb(var(--bs-primary-rgb));
+        transition: all 0.2s ease-in-out;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(var(--bs-primary-rgb), 0.3);
+      }
+      .contact-info-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+      .contact-info-item .icon {
+        font-size: 1.5rem;
+        color: rgb(var(--bs-primary-rgb));
+        width: 40px;
+        margin-right: 15px;
+      }
+      .contact-form-card {
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+      footer { 
+        background-color: #ffffff;
+        margin-top: 5rem;
+      }
+    </style>
   </head>
   <body id="home">
-    <nav class="navbar navbar-expand-lg bg-nav fixed-top shadow-sm">
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
       <div class="container">
-        <a class="navbar-brand" href="index.html" id="home">
-          <img src="img/icon_v3.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top" />
+        <a class="navbar-brand" href="index.html">
+          <img src="img/icon_v3.png" alt="RAZPanel Logo" width="40" height="40" />
+          <span class="fw-bold ms-2">RAZPanel</span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio.html">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="blog.html">Blog</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#keunggulan">Keunggulan</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#produk">Produk</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">Tentang Kami</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Kontak</a></li>
           </ul>
         </div>
       </div>
     </nav>
-    <section class="jumbotron text-center">
-      <img src="img/logo.png" alt="RAZPanel MEDIA" width="200px" />
-      <h1 class="display-4">Hubungi Kami</h1>
-      <p class="container lead">Jika kalian ingin menghubungi Kami, Kami sudah sertakan Alamat beserta Kontak Online.</p>
-      <a class="btn btn-secondary btn-lg" href="#contact" role="button">Kontak Kami</a>
+
+    <section class="page-header text-center" style="margin-top: 60px;">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Hubungi Kami</h1>
+        <p class="lead text-muted">
+          Punya pertanyaan atau butuh bantuan? Jangan ragu untuk menghubungi kami.
+        </p>
+      </div>
     </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path
-        fill="#82bae2"
-        fill-opacity="1"
-        d="M0,160L40,144C80,128,160,96,240,96C320,96,400,128,480,149.3C560,171,640,181,720,160C800,139,880,85,960,106.7C1040,128,1120,224,1200,245.3C1280,267,1360,213,1400,186.7L1440,160L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
-      ></path>
-    </svg>
-    <section class="container" id="contact">
-      <div class="row">
-        <div class="col-sm-6 col-md-12 col-lg-12 col-xl-7 py-4">
-          <h4 class="display-6 text-center">Google Maps Area</h4>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.6428480565396!2d104.71164851536197!3d-2.9186567404096486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b738123e875ad%3A0x6fa00b4070a74046!2sDimana%20mana%20hatiku%20senang!5e0!3m2!1sen!2sid!4v1666442119951!5m2!1sen!2sid"
-            width="100%"
-            height="450"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-        <div class="col-sm-6 col-md-12 col-lg-12 col-xl-5 py-4">
-          <h4 class="display-6 text-center">Kontak</h4>
-          <div class="mb-3">
-            <label for="exampleFormControlInputFullName" class="form-label">Nama Lengkap</label>
-            <input type="text" class="form-control" id="exampleFormControlInputFullName" placeholder="John Doe" />
+    
+    <section class="contact-section py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <h3 class="fw-bold mb-4">Informasi Kontak</h3>
+            <p class="text-muted mb-4">Kami siap membantu Anda. Hubungi kami melalui detail di bawah ini atau kirimkan pesan melalui formulir di samping.</p>
+            
+            <div class="contact-info-item">
+              <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <h5 class="mb-0">Alamat</h5>
+                <p class="text-muted mb-0">Jl. Jend. Sudirman Kav. 52-53, Jakarta Selatan, Indonesia</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <h5 class="mb-0">Email</h5>
+                <p class="text-muted mb-0">support@razpanel.com</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <h5 class="mb-0">Telepon</h5>
+                <p class="text-muted mb-0">+62 21 1234 5678</p>
+              </div>
+            </div>
+
+            <div class="mt-5">
+              <h4 class="mb-3">Lokasi Kami</h4>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.242921319809!2d106.80438131534927!3d-6.231588995489021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f14d3007127b%3A0x25o_is_your_real_location!2sPacific%20Century%20Place%2C%20Jakarta!5e0!3m2!1sen!2sid!4v1661759556285!5m2!1sen!2sid" 
+                width="100%" 
+                height="300" 
+                style="border:0; border-radius: 12px;" 
+                allowfullscreen="" 
+                loading="lazy">
+              </iframe>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="exampleFormControlInputEmail" class="form-label">Alamat Email</label>
-            <input type="email" class="form-control" id="exampleFormControlInputEmail" placeholder="name@example.com" />
+
+          <div class="col-lg-7">
+            <div class="contact-form-card">
+              <h3 class="fw-bold mb-4">Kirim Pesan</h3>
+              <form id="contactForm">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="fullName" placeholder="Nama Anda" required>
+                  <label for="fullName">Nama Lengkap</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="email" placeholder="email@anda.com" required>
+                  <label for="email">Alamat Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="subject" placeholder="Subjek Pesan" required>
+                  <label for="subject">Subjek</label>
+                </div>
+                <div class="form-floating mb-4">
+                  <textarea class="form-control" placeholder="Tulis pesan Anda di sini" id="message" style="height: 150px" required></textarea>
+                  <label for="message">Pesan</label>
+                </div>
+                <div class="d-grid">
+                  <button class="btn btn-primary btn-lg" type="submit">Kirim Pesan</button>
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Pesan yang disampaikan:</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          </div>
-          <a class="btn btn-secondary btn-lg" href="#contact" role="button">Kirim Masukkan</a>
         </div>
       </div>
     </section>
-    <div class="container">
-      <footer class="py-3 my-4">
+
+    <footer class="py-4">
+      <div class="container">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link px-2 text-muted">About</a></li>
-          <li class="nav-item"><a href="portfolio.html" class="nav-link px-2 text-muted">Portfolio</a></li>
-          <li class="nav-item"><a href="blog.html" class="nav-link px-2 text-muted">Blog</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted" href="index.html#keunggulan">Keunggulan</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted" href="index.html#produk">Produk</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted" href="about.html">Tentang Kami</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted" href="contact.html">Kontak</a></li>
         </ul>
-        <p class="text-center text-muted">&copy; 2022 RAZPanel, Inc</p>
-      </footer>
-    </div>
-    <script src="js/script.js"></script>
-    <script src="js/fontawesome.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+        <p class="text-center text-muted">&copy; 2025 RAZPanel, Inc. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(event) {
+          // Mencegah form mengirim data secara tradisional
+          event.preventDefault();
+          
+          const fullName = document.getElementById('fullName').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const subject = document.getElementById('subject').value.trim();
+          const message = document.getElementById('message').value.trim();
+          
+          // Validasi sederhana
+          if (fullName === '' || email === '' || subject === '' || message === '') {
+            Swal.fire({
+              icon: 'warning',
+              title: 'Form Belum Lengkap',
+              text: 'Mohon isi semua kolom yang tersedia.',
+            });
+            return;
+          }
+          
+          // Jika validasi sukses, tampilkan notifikasi
+          Swal.fire({
+            icon: 'success',
+            title: 'Pesan Terkirim!',
+            text: 'Terima kasih telah menghubungi kami. Kami akan segera merespons pesan Anda.',
+          });
+          
+          // Kosongkan form setelah berhasil
+          contactForm.reset();
+        });
+      });
+    </script>
   </body>
 </html>

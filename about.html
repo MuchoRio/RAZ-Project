@@ -1,95 +1,233 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Icon -->
+    
+    <title>Tentang Kami - RAZ Panel</title>
+    <meta name="description" content="Kenali lebih jauh tentang RAZPanel, tim di baliknya, dan misi kami untuk menyediakan layanan Social Media Marketing terbaik di Indonesia." />
+
     <link rel="shortcut icon" href="img/icon_v2.png" type="image/x-icon" />
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="css/fontawesome.min.css" />
-    <!-- Style -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>RAZ Panel - About</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+      :root {
+        --bs-primary-rgb: 88, 101, 242;
+        --bs-secondary-rgb: 155, 155, 155;
+        --bs-body-font-family: 'Poppins', sans-serif;
+        --bs-body-bg: #f8f9fa;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+      }
+      .page-header {
+        padding: 80px 0;
+        background-color: #ffffff;
+      }
+      .btn-primary {
+        background-color: rgb(var(--bs-primary-rgb));
+        border-color: rgb(var(--bs-primary-rgb));
+        transition: all 0.2s ease-in-out;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(var(--bs-primary-rgb), 0.3);
+      }
+      /* Style untuk kartu tim */
+      .team-card {
+        border: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .team-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      .team-card img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        margin: 0 auto;
+        border: 5px solid #ffffff;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+      }
+      .team-socials a {
+        color: #6c757d;
+        margin: 0 0.5rem;
+        font-size: 1.2rem;
+        transition: color 0.2s ease;
+      }
+      .team-socials a:hover {
+        color: rgb(var(--bs-primary-rgb));
+      }
+      /* Style untuk kartu nilai-nilai (re-use dari index) */
+      .feature-card {
+        border: none;
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 2rem;
+        height: 100%;
+      }
+      .feature-icon {
+        width: 60px;
+        height: 60px;
+        background-color: rgba(var(--bs-primary-rgb), 0.1);
+        color: rgb(var(--bs-primary-rgb));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      footer { 
+        background-color: #ffffff;
+        margin-top: 5rem;
+      }
+    </style>
   </head>
   <body id="home">
-    <nav class="navbar navbar-expand-lg bg-nav fixed-top shadow-sm">
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
       <div class="container">
-        <a class="navbar-brand" href="index.html" id="home">
-          <img src="img/icon_v3.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top" />
+        <a class="navbar-brand" href="index.html">
+          <img src="img/icon_v3.png" alt="RAZPanel Logo" width="40" height="40" />
+          <span class="fw-bold ms-2">RAZPanel</span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio.html">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="blog.html">Blog</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#keunggulan">Keunggulan</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#produk">Produk</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="about.html">Tentang Kami</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
           </ul>
         </div>
       </div>
     </nav>
-    <section class="jumbotron text-center">
-      <img src="img/logo.png" alt="RAZPanel MEDIA" width="200px" />
-      <h1 class="display-4">Tentang Kami</h1>
-      <p class="container lead">
-        RAZPanel adalah situs Panel yang bergerak dibidang Sosial Media Marketing. Panel ini berguna untuk mempromosikan akun anda menjadi terkenal layaknya Youtuber, Selebgram, atau Tiktoker terkenal jaman sekarang. RAZPanel memiliki 3
-        Founder sekaligus Admin untuk menghandle keperluan anda. Moto Kami adalah <i>"Kesuksesan dapat dicapai dengan jalan pintas."</i>
-      </p>
-      <a class="btn btn-secondary btn-lg" href="#ourteam" role="button">Tentang Kami</a>
+
+    <section class="page-header text-center" style="margin-top: 60px;">
+      <div class="container">
+        <h1 class="display-4 fw-bold">Tentang RAZPanel</h1>
+        <p class="lead text-muted">
+          Mengenal lebih dekat siapa kami, apa yang kami lakukan, dan orang-orang di balik layar.
+        </p>
+      </div>
     </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path
-        fill="#82bae2"
-        fill-opacity="1"
-        d="M0,160L40,144C80,128,160,96,240,96C320,96,400,128,480,149.3C560,171,640,181,720,160C800,139,880,85,960,106.7C1040,128,1120,224,1200,245.3C1280,267,1360,213,1400,186.7L1440,160L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
-      ></path>
-    </svg>
-    <section class="ourteam" id="ourteam">
+    
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" class="img-fluid rounded-3 shadow-sm" alt="Tim RAZPanel">
+          </div>
+          <div class="col-lg-6">
+            <h2 class="fw-bold mb-3">Membuka Jalan Pintas Menuju Kesuksesan Digital</h2>
+            <p class="text-muted">RAZPanel adalah platform yang bergerak di bidang Social Media Marketing. Kami hadir untuk membantu Anda mempromosikan akun media sosial agar menjadi pusat perhatian, layaknya para influencer, YouTuber, atau TikToker terkenal saat ini.</p>
+            <p class="text-muted">Didirikan oleh tiga founder yang juga berperan sebagai admin, kami berkomitmen untuk menangani setiap kebutuhan Anda dengan cepat dan profesional. Kami percaya bahwa dengan strategi yang tepat, popularitas bisa diraih secara efisien.</p>
+            <blockquote class="blockquote fst-italic mt-3">"Kesuksesan dapat dicapai dengan jalan pintas."</blockquote>
+            <a href="contact.html" class="btn btn-primary btn-lg mt-3">Hubungi Kami</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-white">
       <div class="container">
         <div class="row text-center">
-          <div class="col-12 pb-5">
-            <h2 class="display-5">Founder & Admin RAZPanel</h2>
+          <div class="col-12">
+            <h2 class="fw-bold">Nilai-Nilai Kami</h2>
+            <p class="text-muted mb-5">Tiga pilar utama yang menjadi landasan kerja kami.</p>
           </div>
-          <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-              <div class="card h-100">
-                <img src="img/rio.jpg" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h5 class="card-title">Rio Griya Putra</h5>
-                  <p class="card-text">Setiap kesulitan selalu ada kemudahan. Setiap masalah pasti ada Saya.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="feature-card text-center">
+              <div class="feature-icon mx-auto"><i class="fa-solid fa-rocket"></i></div>
+              <h4 class="mb-3">Inovasi</h4>
+              <p class="text-muted">Kami selalu mengikuti tren terbaru di dunia media sosial untuk memberikan layanan yang paling relevan dan efektif.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card text-center">
+              <div class="feature-icon mx-auto"><i class="fa-solid fa-gem"></i></div>
+              <h4 class="mb-3">Kualitas</h4>
+              <p class="text-muted">Kualitas layanan adalah prioritas utama. Kami memastikan setiap pesanan memberikan hasil terbaik untuk kepuasan Anda.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card text-center">
+              <div class="feature-icon mx-auto"><i class="fa-solid fa-handshake-angle"></i></div>
+              <h4 class="mb-3">Kepercayaan</h4>
+              <p class="text-muted">Kami membangun hubungan jangka panjang dengan pelanggan melalui transparansi, keamanan, dan dukungan yang responsif.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ourteam" class="py-5">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12">
+            <h2 class="fw-bold">Founder & Admin RAZPanel</h2>
+            <p class="text-muted mb-5">Tim solid di balik kesuksesan Anda.</p>
+          </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <div class="card team-card h-100 text-center py-4">
+              <img src="img/rio.jpg" class="rounded-circle" alt="Foto Rio Griya Putra">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Rio Griya Putra</h5>
+                <p class="text-muted">Co-Founder & Lead Developer</p>
+                <p class="card-text fst-italic">"Setiap kesulitan selalu ada kemudahan. Setiap masalah pasti ada Saya."</p>
+                <div class="team-socials mt-3">
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card h-100">
-                <img src="img/ayu.jpg" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h5 class="card-title">Ayu Sri Rahayu</h5>
-                  <p class="card-text">Terkadang Bernafas di udara lebih baik daripada di air.</p>
+          </div>
+          <div class="col">
+            <div class="card team-card h-100 text-center py-4">
+              <img src="img/ayu.jpg" class="rounded-circle" alt="Foto Ayu Sri Rahayu">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Ayu Sri Rahayu</h5>
+                <p class="text-muted">Co-Founder & Marketing Head</p>
+                <p class="card-text fst-italic">"Terkadang bernafas di udara lebih baik daripada di air."</p>
+                <div class="team-socials mt-3">
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card h-100">
-                <img src="img/zulfa.jpg" class="card-img-top" alt="..." />
-                <div class="card-body">
-                  <h5 class="card-title">Zulfa Alfin Nabilah</h5>
-                  <p class="card-text">Hewan yang mempunyai 1 abjad. I Kan?.</p>
+          </div>
+          <div class="col">
+            <div class="card team-card h-100 text-center py-4">
+              <img src="img/zulfa.jpg" class="rounded-circle" alt="Foto Zulfa Alfin Nabilah">
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Zulfa Alfin Nabilah</h5>
+                <p class="text-muted">Co-Founder & Support Manager</p>
+                <p class="card-text fst-italic">"Hewan yang mempunyai 1 abjad. I Kan?."</p>
+                <div class="team-socials mt-3">
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-github"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
               </div>
             </div>
@@ -97,20 +235,21 @@
         </div>
       </div>
     </section>
-    <div class="container">
-      <footer class="py-3 my-4">
+
+    <footer class="py-4">
+      <div class="container">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Home</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-muted">Contact</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-          <li class="nav-item"><a href="portfolio.html" class="nav-link px-2 text-muted">Portfolio</a></li>
-          <li class="nav-item"><a href="blog.html" class="nav-link px-2 text-muted">Blog</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted" href="index.html#keunggulan">Keunggulan</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted" href="index.html#produk">Produk</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted" href="about.html">Tentang Kami</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted" href="contact.html">Kontak</a></li>
         </ul>
-        <p class="text-center text-muted">&copy; 2022 RAZPanel, Inc</p>
-      </footer>
-    </div>
-    <script src="js/script.js"></script>
-    <script src="js/fontawesome.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+        <p class="text-center text-muted">© 2025 RAZPanel, Inc. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
   </body>
 </html>

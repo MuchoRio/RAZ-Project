@@ -1,134 +1,259 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Icon -->
+    
+    <title>Blog - RAZ Panel</title>
+    <meta name="description" content="Artikel, berita, dan update terbaru dari RAZPanel seputar Social Media Marketing." />
+
     <link rel="shortcut icon" href="img/icon_v2.png" type="image/x-icon" />
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="css/fontawesome.min.css" />
-    <!-- Style -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>RAZ Panel - Blog</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+      :root {
+        --bs-primary-rgb: 88, 101, 242;
+        --bs-secondary-rgb: 155, 155, 155;
+        --bs-body-font-family: 'Poppins', sans-serif;
+        --bs-body-bg: #f8f9fa;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+      }
+      .page-header {
+        padding: 80px 0;
+        background-color: #ffffff;
+      }
+      .btn-primary {
+        background-color: rgb(var(--bs-primary-rgb));
+        border-color: rgb(var(--bs-primary-rgb));
+        transition: all 0.2s ease-in-out;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(var(--bs-primary-rgb), 0.3);
+      }
+      /* Style untuk kartu blog */
+      .blog-card {
+        border: none;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .blog-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      }
+      .blog-card-img {
+        height: 200px;
+        object-fit: cover;
+      }
+      .blog-card .badge {
+        background-color: rgba(var(--bs-primary-rgb), 0.1);
+        color: rgb(var(--bs-primary-rgb));
+        font-weight: 500;
+      }
+      /* Style untuk Sidebar */
+      .sidebar-widget {
+        background-color: #ffffff;
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      }
+      .sidebar-widget-title {
+        font-weight: 600;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 0.5rem;
+      }
+      .sidebar-widget ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      .sidebar-widget ul li a {
+        text-decoration: none;
+        color: #6c757d;
+        transition: color 0.2s ease;
+      }
+      .sidebar-widget ul li a:hover {
+        color: rgb(var(--bs-primary-rgb));
+      }
+      footer { 
+        background-color: #ffffff;
+      }
+    </style>
   </head>
-  <body id="home">
-    <nav class="navbar navbar-expand-lg bg-nav fixed-top shadow-sm">
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
       <div class="container">
-        <a class="navbar-brand" href="index.html" id="home">
-          <img src="img/icon_v3.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top" />
+        <a class="navbar-brand" href="index.html">
+          <img src="img/icon_v3.png" alt="RAZPanel Logo" width="40" height="40" />
+          <span class="fw-bold ms-2">RAZPanel</span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="portfolio.html">Portfolio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Blog</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">Tentang Kami</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Kontak</a></li>
           </ul>
         </div>
       </div>
     </nav>
-    <section class="jumbotron text-center">
-      <img src="img/logo.png" alt="RAZPanel MEDIA" width="200px" />
-      <h1 class="display-4">Blog Kami</h1>
-      <p class="container lead">Page ini berisi konten dalam bentuk artikel yang dikelola oleh seorang admin untuk memberikan berita update tentang fitur - fitur baru panel dan kegunaan kedepannya.</p>
-      <a class="btn btn-secondary btn-lg" href="#blog" role="button">Blog Kami</a>
-    </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path
-        fill="#82bae2"
-        fill-opacity="1"
-        d="M0,160L40,144C80,128,160,96,240,96C320,96,400,128,480,149.3C560,171,640,181,720,160C800,139,880,85,960,106.7C1040,128,1120,224,1200,245.3C1280,267,1360,213,1400,186.7L1440,160L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
-      ></path>
-    </svg>
-    <section class="blog" id="blog">
+
+    <section class="page-header text-center" style="margin-top: 60px;">
       <div class="container">
-        <div class="row text-center">
-          <div class="col-12 pb-5">
-            <h2 class="display-5">Blog Kami</h2>
+        <h1 class="display-4 fw-bold">Artikel & Berita Terbaru</h1>
+        <p class="lead text-muted">
+          Dapatkan wawasan, tips, dan update fitur terbaru dari dunia Social Media Marketing.
+        </p>
+      </div>
+    </section>
+    
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-8">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="col">
+                <div class="card blog-card h-100">
+                  <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1974&auto=format&fit=crop" class="card-img-top blog-card-img" alt="Social Media Icons">
+                  <div class="card-body d-flex flex-column">
+                    <div class="mb-2">
+                      <span class="badge rounded-pill me-1">Tips & Trik</span>
+                      <span class="badge rounded-pill">Instagram</span>
+                    </div>
+                    <h5 class="card-title fw-bold">5 Cara Ampuh Meningkatkan Engagement Instagram di 2025</h5>
+                    <p class="card-text text-muted">Pelajari strategi terbaru untuk membuat audiens Anda lebih aktif dan loyal di Instagram...</p>
+                    <div class="mt-auto">
+                      <a href="#" class="btn btn-outline-primary">Baca Selengkapnya</a>
+                    </div>
+                  </div>
+                  <div class="card-footer bg-transparent border-0 text-muted small">
+                    <p class="mb-0">27 Agustus 2025 | Oleh: Ayu Sri Rahayu</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card blog-card h-100">
+                  <img src="https://images.unsplash.com/photo-1611605698335-8b1569810432?q=80&w=1974&auto=format&fit=crop" class="card-img-top blog-card-img" alt="TikTok on a phone">
+                  <div class="card-body d-flex flex-column">
+                    <div class="mb-2">
+                      <span class="badge rounded-pill me-1">Update</span>
+                      <span class="badge rounded-pill">TikTok</span>
+                    </div>
+                    <h5 class="card-title fw-bold">Fitur Baru: Penjadwalan Likes TikTok Otomatis!</h5>
+                    <p class="card-text text-muted">Kini Anda bisa menjadwalkan likes untuk konten TikTok Anda langsung dari panel kami...</p>
+                    <div class="mt-auto">
+                      <a href="#" class="btn btn-outline-primary">Baca Selengkapnya</a>
+                    </div>
+                  </div>
+                  <div class="card-footer bg-transparent border-0 text-muted small">
+                    <p class="mb-0">25 Agustus 2025 | Oleh: Rio Griya Putra</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card blog-card h-100">
+                  <img src="https://images.unsplash.com/photo-1516726283893-2785a6a6557b?q=80&w=2070&auto=format&fit=crop" class="card-img-top blog-card-img" alt="Giveaway concept">
+                  <div class="card-body d-flex flex-column">
+                    <div class="mb-2">
+                      <span class="badge rounded-pill me-1">Pengumuman</span>
+                    </div>
+                    <h5 class="card-title fw-bold">Giveaway 10.000 Follower untuk Pelanggan Setia</h5>
+                    <p class="card-text text-muted">Sebagai bentuk apresiasi, kami mengadakan giveaway besar-besaran untuk Anda...</p>
+                    <div class="mt-auto">
+                      <a href="#" class="btn btn-outline-primary">Baca Selengkapnya</a>
+                    </div>
+                  </div>
+                  <div class="card-footer bg-transparent border-0 text-muted small">
+                    <p class="mb-0">22 Agustus 2025 | Oleh: Zulfa Alfin Nabilah</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card blog-card h-100">
+                  <img src="https://images.unsplash.com/photo-1554177255-61502b352de3?q=80&w=2070&auto=format&fit=crop" class="card-img-top blog-card-img" alt="Analytics on a screen">
+                  <div class="card-body d-flex flex-column">
+                    <div class="mb-2">
+                      <span class="badge rounded-pill me-1">Studi Kasus</span>
+                      <span class="badge rounded-pill">Facebook</span>
+                    </div>
+                    <h5 class="card-title fw-bold">Bagaimana Brand X Meningkatkan Penjualan 200% via Facebook Ads</h5>
+                    <p class="card-text text-muted">Analisis mendalam tentang strategi yang kami terapkan untuk salah satu klien kami...</p>
+                    <div class="mt-auto">
+                      <a href="#" class="btn btn-outline-primary">Baca Selengkapnya</a>
+                    </div>
+                  </div>
+                  <div class="card-footer bg-transparent border-0 text-muted small">
+                    <p class="mb-0">20 Agustus 2025 | Oleh: Ayu Sri Rahayu</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="row text-center">
-            <div class="col-6 pb-5">
-              <div class="card mb-3">
-                <img src="img/followers.jpg" class="card-img-top h-25" alt="..." />
-                <div class="card-body text-start">
-                  <h5 class="card-title">Give Away Followers</h5>
-                  <p class="card-text">Kita mengadakan sebuah giveaway followers senilai 1000 Followers untuk user yang sering menggunakan panel ini dan menshare panel ini ke media sosial.</p>
-                </div>
-                <div class="card-footer text-start">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
+
+          <div class="col-lg-4">
+            <div class="sidebar-widget">
+              <h5 class="sidebar-widget-title">Pencarian</h5>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Cari artikel...">
+                <button class="btn btn-primary" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
               </div>
             </div>
-            <div class="col-6 pb-5">
-              <div class="card mb-3">
-                <img src="img/followers.jpg" class="card-img-top h-25" alt="..." />
-                <div class="card-body text-start">
-                  <h5 class="card-title">Give Away Followers</h5>
-                  <p class="card-text">Kita mengadakan sebuah giveaway followers senilai 1000 Followers untuk user yang sering menggunakan panel ini dan menshare panel ini ke media sosial.</p>
-                </div>
-                <div class="card-footer text-start">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-              </div>
+
+            <div class="sidebar-widget">
+              <h5 class="sidebar-widget-title">Kategori</h5>
+              <ul class="mb-0">
+                <li class="mb-2"><a href="#">Tips & Trik (5)</a></li>
+                <li class="mb-2"><a href="#">Update Fitur (3)</a></li>
+                <li class="mb-2"><a href="#">Pengumuman (2)</a></li>
+                <li class="mb-2"><a href="#">Studi Kasus (4)</a></li>
+                <li class="mb-0"><a href="#">Berita Industri (7)</a></li>
+              </ul>
             </div>
-            <div class="col-6 pb-5">
-              <div class="card mb-3">
-                <img src="img/followers.jpg" class="card-img-top h-25" alt="..." />
-                <div class="card-body text-start">
-                  <h5 class="card-title">Give Away Followers</h5>
-                  <p class="card-text">Kita mengadakan sebuah giveaway followers senilai 1000 Followers untuk user yang sering menggunakan panel ini dan menshare panel ini ke media sosial.</p>
-                </div>
-                <div class="card-footer text-start">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-6 pb-5">
-              <div class="card mb-3">
-                <img src="img/followers.jpg" class="card-img-top h-25" alt="..." />
-                <div class="card-body text-start">
-                  <h5 class="card-title">Give Away Followers</h5>
-                  <p class="card-text">Kita mengadakan sebuah giveaway followers senilai 1000 Followers untuk user yang sering menggunakan panel ini dan menshare panel ini ke media sosial.</p>
-                </div>
-                <div class="card-footer text-start">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-              </div>
+            
+            <div class="sidebar-widget">
+              <h5 class="sidebar-widget-title">Postingan Terbaru</h5>
+              <ul class="mb-0">
+                <li class="mb-2"><a href="#">5 Cara Ampuh Meningkatkan Engagement...</a></li>
+                <li class="mb-2"><a href="#">Fitur Baru: Penjadwalan Likes TikTok...</a></li>
+                <li class="mb-2"><a href="#">Giveaway 10.000 Follower untuk...</a></li>
+                <li class="mb-0"><a href="#">Bagaimana Brand X Meningkatkan Penjualan...</a></li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <div class="container">
-      <footer class="py-3 my-4">
+
+    <footer class="py-4">
+      <div class="container">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">Home</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link px-2 text-muted">Contact</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link px-2 text-muted">About</a></li>
-          <li class="nav-item"><a href="portfolio.html" class="nav-link px-2 text-muted">Portfolio</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Blog</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted" href="about.html">Tentang Kami</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link px-2 text-muted" href="contact.html">Kontak</a></li>
         </ul>
-        <p class="text-center text-muted">&copy; 2022 RAZPanel, Inc</p>
-      </footer>
-    </div>
-    <script src="js/script.js"></script>
-    <script src="js/fontawesome.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
+        <p class="text-center text-muted">© 2025 RAZPanel, Inc. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
   </body>
 </html>
